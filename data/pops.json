@@ -4,7 +4,7 @@
             "name":"Goku",
             "description":"Name: Goku",
             "number":"VALUE: 1",
-            "image":"images/Goku.jpeg",
+            "image":"/images/Goku.jpeg",
             "category":"CATEGORY : Animation"
         },
         {
