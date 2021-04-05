@@ -4,10 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta name="description" content="Funko Pop!">
-    <meta name="keywords" content="funko, pop!">
-    <meta name="author" content="Alex Hedley">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/sticky-footer.css">
@@ -16,27 +12,32 @@
     <link rel="stylesheet" href="css/jquery-ui.1.12.1.min.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="shortcut icon" href="favicon.ico">
+
 
     <!-- Fonts -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> -->
 
-    <title>Funko Pop!</title>
+    <title> Project 1: Making an App </title>
+
   </head>
+
+
   <body ng-app="myApp">
     
     <!-- Begin page content -->
     <main role="main" class="container">
 
-        <section class="jumbotron title-container text-center">
+        <section class="title-container text-center">
             <div>
-                <h1>Funko Pop!</h1>
+                <h1>Funko Pops</h1>
 
-                <div class="row justify-content-md-center">
-                    <div class="col-lg-8">
-                        <div class="input-group search-bar">
-                            <input type="text" class="form-control" ng-model='searchText' placeholder="Search for a Funko Pop!..." aria-label="Search">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                <div class="row justify-content-md-center title-container text-center ">
+                    <div class="row justify-content-md-center title-container text-center">
+
+                            <h1><button><a class="active" href="#All">All</a></button></h1>
+                            <h1><button><a href="#Games">Games</a></button></h1>
+                                <h1><button><a href="#Television">Television</a></button></h1>
+                                    <h1><button><a href="#Animation">Animation</a></button></h1>
                         </div>
                     </div>
                 </div>
@@ -48,17 +49,18 @@
 
             <div class="container">
                 <div class="row">
-                    <div 
-                        ng-repeat="pop in pops | filter:searchText"
+                    <div
+                        ng-repeat="pop in pops"
                         class="col-md-4"
                         style="margin-bottom: 50px;"
                     >
                         <div class="card" style="width: 18rem;">
                             <img ng-src="/funkopop/{{pop.image}}" class="card-img-top" alt="{{pop.name}}">
                             <div class="card-body">
-                                <h5 class="card-title">{{pop.name}} <span class="badge badge-secondary">{{pop.number}}</span></h5>
+                                <h5 class="card-title">{{pop.name}} </h5>
                                 <p class="card-text">{{pop.description}}</p>
-                                <a ng-href="{{pop.link}}" target="_blank" class="btn btn-primary">Official Link</a>
+                                <p class="card-text">{{pop.category}}</p>
+                                <p class="card-text">{{pop.number}}</p>
                             </div>
                         </div>
                     </div>
@@ -69,11 +71,6 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <span class="text-muted">Alex Hedley.</span>
-        </div>
-    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
